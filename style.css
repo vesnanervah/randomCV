@@ -1,0 +1,303 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.body-container{
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+.main-body-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden{
+    overflow: hidden;
+}
+@media(max-width:769px){
+    .body-container{
+        width: 100%;
+    }
+}
+@media(min-width:769px){
+    .subsection{
+        padding-left: clamp(6.25rem, -3.778rem + 20.86vw, 15rem);
+        padding-right: clamp(6.25rem, -3.778rem + 20.86vw, 15rem);
+    }
+}
+/*---------Nav---------*/   
+
+@media(max-width:769px){
+    .nav{
+        border:none;
+
+    }
+    .nav-list{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:68px;
+    padding:40px 26px;
+    position:absolute;
+    top:0;
+    width: 220px;
+    left:-220px;
+    overflow:auto;
+    background-color:white;
+    z-index:4;
+    }
+}
+.nav-list{
+    display:flex;
+    justify-content:space-between;
+    transition:left 1s;
+}
+.nav-list-active{
+    left:0px;
+
+}
+.nav-item{
+    list-style:none;
+}
+.nav-link{
+    text-decoration:none;
+    font-size: 18px;
+    color: #828282;
+    font-weight:600;
+}
+.nav-link:hover{
+    color:#070707;
+    font-weight:800;
+}
+.bourger{
+    padding:3px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    position:absolute;
+    top:18px;
+    right:18px;
+}
+.bourger:hover, .nav-link:hover{
+    cursor: pointer;
+}
+.bourger-line{
+    width:33px;
+    height:4px;
+    background-color:black;
+    transition: color 1s;
+}
+.white-bourger-line{
+    background-color: white;
+
+}
+@media(min-width:769px){
+    .bourger{
+        display:none;
+    }
+    .nav-list{    
+        padding-top:32px;
+        padding-bottom:32px;
+        border-bottom: 1px solid #828282;
+        transform: matrix(1, 0, 0, 1, 0, 0);}
+}
+.blind-area{
+    background-color: black;
+    opacity: 0;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    transition: opacity 1s;
+}
+.blind-area-active{
+    opacity: 0.9;
+}
+/*----------Introduction-------------*/
+.intro{
+    padding-top:clamp(1.125rem, -0.451rem + 3.28vw, 2.5rem);
+}
+.intro-text{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.who h1{
+    font-size: clamp(2rem, 1.714rem + 1.43vw, 3rem);
+    line-height: clamp(2.25rem, 1.839rem + 2.05vw, 3.688rem);
+    color: #070707;
+}
+.job h2{
+    font-size: 18px;
+    line-height: 22px;
+    color: #070707;
+    font-weight:400;
+}
+.change-lang{
+    transform:rotate(270deg);
+    position:relative;
+    bottom:8px;
+}
+.intro-img{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:clamp(1.5rem, 0.714rem + 3.93vw, 4.25rem) 0 ;
+}
+.profile-photo{
+    position: relative;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+@media(max-width:769px){
+    .intro{
+        padding: 30px 15px 60px ;
+    }
+    .intro-text{
+        flex-direction:column;
+        gap:clamp(1rem, 0.688rem + 1.56vw, 1.438rem);
+        align-items:flex-start;
+    }
+    .change-lang{
+        display:none;
+    }
+    .profile-photo{
+        width: auto;
+        min-height: 416px;
+    }
+}
+
+/*------About me subsection--------*/
+.about-me{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: clamp(1.625rem, 0.304rem + 6.61vw, 6.25rem);
+    padding-bottom: clamp(1.625rem, 0.304rem + 6.61vw, 6.25rem);
+    background-color: #F6F6F6;
+}
+
+.subsection-title{
+    text-align: center;
+    font-size: 34px;
+    text-align: center;
+    color: #070707;
+}
+.subsection-text{
+    font-size: 18px;
+    text-align: center;
+    color: #070707;
+    margin-top: 21px;
+}
+.about-me-text{
+    max-width: 485px;
+    text-align: center;
+}
+.about-me-text p:nth-child(2){
+    padding: 42px 0;
+}
+.about-me-text p:nth-child(3){
+    padding: 0 48px;
+}
+@media(max-width:769px){
+    .about-me{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .about-me-text p:nth-child(3){
+        padding:0;
+    }
+}
+/*----------Skills subsection-------------*/
+.my-skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: clamp(1.625rem, 0.304rem + 6.61vw, 6.25rem);
+    padding-bottom: clamp(1.625rem, 0.304rem + 6.61vw, 6.25rem)
+}
+.skills-text{
+    padding:clamp(2rem, 1.5rem + 2.5vw, 3.75rem) 0 clamp(2rem, 1.321rem + 3.39vw, 4.375rem);
+}
+.programs{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.program-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.program-title{
+    font-size: 14px;
+    text-align: center;
+    color: #828282;
+    padding-top: clamp(1.125rem, 1.036rem + 0.45vw, 1.438rem);
+}
+@media(min-width:481px) and (max-width:769px){
+    .programs{
+        justify-content: center;
+        gap:25px;
+    }
+}
+@media(max-width:481px){
+    .programs{
+        flex-direction: column;
+        align-items: center;
+    }
+    .program-card{
+        padding-bottom: 17px;
+    }
+}
+/*--------------------------------*/
+
+/*--------------Porfolio subsection--------------*/
+.portfolio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F6F6F6;
+    padding-top: clamp(1.625rem, 0.304rem + 6.61vw, 6.25rem);
+    padding-bottom: clamp(1.625rem, 0.304rem + 6.61vw, 6.25rem)
+}
+.portfolio-examples{
+    display: flex;
+    flex-direction: column;
+    padding-top: 47px;
+    gap: clamp(3.75rem, 3.393rem + 1.79vw, 5rem);
+    width:100%;
+}
+.portfolio-example{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.porfolio-link{
+    font-size: 18px;
+    text-decoration-line: underline;
+    color: #070707;
+    padding-top: clamp(1.75rem, 1.536rem + 1.07vw, 2.5rem);
+}
+.portfolio-image-container{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.portfolio-image{
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
